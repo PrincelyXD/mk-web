@@ -17,6 +17,7 @@
     "@tailwindcss/vite": "^4.0.17",
     "framer-motion": "^12.6.3",
     "hamburger-react": "^2.5.2",
+    "lenis": "^1.2.3",
     "react": "^19.0.0",
     "react-countup": "^6.5.3",
     "react-dom": "^19.0.0",

@@ -25,7 +25,7 @@ const TestimonialSection = () => {
             />
           </div>
 
-          <div className="relative flex flex-col items-center gap-y-4 sm:pb-10 sm:w-[55%]">
+          <div data-lenis-prevent className="relative flex flex-col items-center gap-y-4 sm:pb-10 sm:w-[55%]">
             {testimonials.map((testimonial, index) => (
               <TestimonialCard
                 key={index}
