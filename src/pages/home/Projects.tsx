@@ -29,7 +29,7 @@ const Projects = () => {
 
       <section className="font-mona relative flex w-[90%] justify-center pt-16 pb-20 md:pt-20 lg:w-[95%]">
         <img className="absolute top-0 h-full" src="/background.png" alt="" />
-        <div className="grid w-full max-w-[1000px] grid-cols-1 grid-rows-2 gap-3 bg-cover bg-center sm:grid-cols-2 sm:gap-5 md:grid-cols-3">
+        <div className="grid w-full max-w-[1000px] grid-cols-1 grid-rows-2 gap-5 bg-cover bg-center sm:grid-cols-2 sm:gap-5 md:grid-cols-3">
           <ProjectsCard
             image={project1}
             header="Open Fasion"

@@ -5,7 +5,7 @@ import { testimonials } from "../../resources/Resources";
 const TestimonialSection = () => {
   return (
     <div className="flex w-full flex-col">
-      <section className="h-[300px] w-full bg-[image:url('/fixed-bg.jpg')] bg-cover bg-fixed md:h-[400px]" />
+      <section className="h-[300px] w-full bg-[image:url('/fixed-bg.jpg')] bg-cover sm:bg-fixed md:h-[400px]" />
 
       <section className="flex w-full justify-center py-10">
         <div className="flex h-[450px] w-[90%] flex-col justify-between 
