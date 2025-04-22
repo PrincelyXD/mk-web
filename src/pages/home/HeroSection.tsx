@@ -4,9 +4,30 @@ import ParralaxImage from "../../components/ParralaxImage";
 import heroBg from "/background.png";
 import wobleyImg from "/wobley.png";
 import { useState } from "react";
-
+import {motion} from 'framer-motion'
 const HeroSection = () => {
   const [isExpanded, setIsExpanded] = useState(false);
+
+  const containerVariants = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.2,
+      },
+    },
+  };
+  
+  const itemVariants = {
+    hidden: { opacity: 0, y: 40 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  };
+  
+
+
+
+
+
   return (
     <div className="font-kanit flex w-[88%] flex-col items-center overflow-hidden pt-10 md:h-[700px]">
       <main className="flex w-full max-w-[1150px] flex-col justify-between md:flex-row">
@@ -17,21 +38,46 @@ const HeroSection = () => {
         />
 
         <section className="relative z-10">
-          <h1 className="text-mk-blue relative w-fit text-7xl font-bold uppercase transition-all duration-300 md:text-7xl lg:text-8xl">
-            we are <br /> skilled <br />
-            in <br />
-            <span className="flex items-center gap-x-7">
-              <span className="flex flex-col text-xl underline">
+        <motion.h1
+  className="text-mk-blue pt-0 md:pt-10 relative w-fit text-7xl font-bold
+   uppercase transition-all duration-300 md:text-7xl lg:text-8xl"
+  variants={containerVariants}
+  initial="hidden"
+  animate="show"
+>
+{["we are", "skilled", "in"].map((line, i) => (
+    <motion.span key={i} variants={itemVariants} className="block">
+      {line}
+    </motion.span>
+  ))}
+
+
+            <motion.span
+                variants={itemVariants}
+             className="flex items-center gap-x-7">
+              <motion.span 
+                 
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.6, duration: 0.6 }}
+              className="flex flex-col text-xl underline">
                 <span className="underline">web</span>
                 <span className="underline">design</span>
-              </span>
+              </motion.span>
               and{" "}
-              <span className="absolute -right-24 bottom-[74px] -rotate-90 text-xl underline lg:-right-16">
+              <motion.span 
+                 initial={{ opacity: 0, y: -20 }}
+                 animate={{ opacity: 1, y: 0 }}
+                 transition={{ delay: 0.8, duration: 0.6 }}
+              className="absolute -right-24 bottom-[74px]
+               -rotate-90 text-xl underline lg:-right-16">
                 {" "}
                 development
-              </span>
-            </span>
-          </h1>
+              </motion.span>
+            </motion.span>
+          </motion.h1>
+
+
           <CustomPillButton
             className="font-kanit mt-7 w-fit bg-white"
             text="Get Started Now"
